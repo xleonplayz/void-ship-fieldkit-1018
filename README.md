@@ -20,3 +20,11 @@ without losing the saved list. A local result does not establish Dev support.
 
 Release 1 is the initial shell. Release 2 changes the visible packing tip and both
 version identifiers, leaving the data schema and sample records unchanged.
+
+The `ship-http` branch packages these same static files behind a small JavaScript
+HTTP server because Dev currently rejects a directory containing only static files.
+Run `npm run assets` after editing an asset, then `npm start`. The checked-in
+`assets.js` is generated from the seven named source files; the server does not
+read a filesystem at runtime. GET and HEAD serve only these fixed routes (plus
+`/` as the index), with explicit MIME types and no HTTP caching. The service worker
+continues to manage its own offline cache. This packaging adds no server-side state.
