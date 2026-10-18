@@ -1,1 +1,1 @@
-window.FIELDKIT={release:1,tip:'Start with the essentials. A lighter bag leaves more room for the day.'};
+window.FIELDKIT={release:2,tip:'Pack the rain layer last, so a change in the weather is easy to meet.'};

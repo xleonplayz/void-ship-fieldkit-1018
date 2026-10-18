@@ -1,5 +1,5 @@
 'use strict';
-const RELEASE=1,CACHE='fieldkit-shell-v'+RELEASE;
+const RELEASE=2,CACHE='fieldkit-shell-v'+RELEASE;
 const SHELL=['/','/index.html','/styles.css','/version.js','/app.js','/manifest.webmanifest','/icon.svg'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL))));
 self.addEventListener('activate',event=>event.waitUntil((async()=>{for(const key of await caches.keys())if(key.startsWith('fieldkit-shell-v')&&key!==CACHE)await caches.delete(key);await self.clients.claim()})()));
